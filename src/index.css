@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Poppins", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-maroon-50: #fff0f0;
+  --color-maroon-100: #ffd6d6;
+  --color-maroon-200: #ffb3b3;
+  --color-maroon-300: #ff8080;
+  --color-maroon-400: #ff4d4d;
+  --color-maroon-500: #cc1a1a;
+  --color-maroon-600: #a30000;
+  --color-maroon-700: #800000; /* Primary brand Royal Maroon */
+  --color-maroon-800: #5c0000;
+  --color-maroon-900: #3d0000;
+  
+  --color-gold-50: #fefdf0;
+  --color-gold-100: #fdfad9;
+  --color-gold-200: #fbf5b3;
+  --color-gold-300: #f9ef8c;
+  --color-gold-400: #f6e866;
+  --color-gold-500: #D4AF37; /* Secondary brand Gold */
+  --color-gold-600: #bca02d;
+  --color-gold-700: #9e8524;
+  --color-gold-800: #7f6a1d;
+  --color-gold-950: #42370e;
+  
+  --color-cream-50: #fffdfa;
+  --color-cream-100: #fffbf0;
+  --color-cream-200: #FFF8E7; /* Brand Cream Background */
+  --color-cream-300: #f6ecd5;
+  --color-cream-400: #ecdcb9;
+  --color-cream-500: #dec595;
+  --color-cream-600: #cfaa71;
+}
+
+@layer utilities {
+  /* Premium marquee animation custom utilities */
+  .animate-marquee {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: marquee 40s linear infinite;
+  }
+  
+  .animate-marquee-slow {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: marquee 60s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Shimmer / gold pulse effects */
+  .gold-gradient {
+    background: linear-gradient(135deg, var(--color-gold-400) 0%, var(--color-gold-600) 100%);
+  }
+  
+  .maroon-gradient {
+    background: linear-gradient(135deg, var(--color-maroon-600) 0%, var(--color-maroon-800) 100%);
+  }
+
+  .gold-shimmer {
+    background-size: 200% auto;
+    background-image: linear-gradient(to right, #D4AF37 0%, #FFF8E7 50%, #D4AF37 100%);
+    animation: shine 4s linear infinite;
+  }
+
+  @keyframes shine {
+    to { background-position: 200% center; }
+  }
+
+  /* Custom Scrollbar for premium feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-cream-100);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-maroon-300);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-maroon-700);
+  }
+}
+
+/* Light / Dark Mode transition support */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: var(--font-sans);
+}
+
+.font-serif-brand {
+  font-family: var(--font-serif);
+}
+
+.font-sans-brand {
+  font-family: var(--font-sans);
+}
+
+.font-mono-brand {
+  font-family: var(--font-mono);
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Gokul Mishthan Bhandar",
+  "description": "A premium, elegant e-commerce platform for Gokul Mishthan Bhandar, featuring handcrafted luxury Indian sweets, gift boxes, and festival specials with an interactive shopping cart, order system, and administrative control panel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
